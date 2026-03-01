@@ -69,6 +69,10 @@ CREATE DATABASE baqardb;
 Step 2: Use Database
 USE baqardb;
 
+====================================
+
+CREATE TABLE
+
 Step 3: Create Employee Table
 CREATE TABLE Employee (
     EmpID INT,
@@ -106,3 +110,45 @@ CREATE TABLE Employee (
     EmpAge INT,
     EmpZone VARCHAR(255)
 );
+
+========================================================
+
+INSERT Data into the table
+
+If EmpID is NOT Auto Increment
+
+INSERT INTO Employee (EmpID, FirstName, LastName, EmpAge, EmpZone) VALUES
+(1, 'Ali', 'Khan', 25, 'North'),
+(2, 'Sara', 'Ahmed', 28, 'South'),
+(3, 'Usman', 'Raza', 30, 'East'),
+(4, 'Ayesha', 'Malik', 27, 'West'),
+(5, 'Hassan', 'Sheikh', 35, 'Central'),
+(6, 'Zain', 'Iqbal', 29, 'North');
+
+If EmpID is AUTO_INCREMENT (Recommended Version)
+
+Then do NOT insert EmpID manually:
+
+INSERT INTO Employee (FirstName, LastName, EmpAge, EmpZone) VALUES
+('Ali', 'Khan', 25, 'North'),
+('Sara', 'Ahmed', 28, 'South'),
+('Usman', 'Raza', 30, 'East'),
+('Ayesha', 'Malik', 27, 'West'),
+('Hassan', 'Sheikh', 35, 'Central'),
+('Zain', 'Iqbal', 29, 'North');
+
+===================================================================
+SELECT Statement 
+
+To Check Inserted Records
+SELECT * FROM Employee;
+
+SELECT EmpID from EMPLOYEE;
+
+SELECT EmpID FROM EMPLOYEE;
+
+Retrieve records from multiple coloumns
+
+SELECT EmpID, FirstName FROM EMPLOYEE;
+
+SELECT EmpID, FirstName, LastName FROM EMPLOYEE;
