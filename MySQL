@@ -1,0 +1,53 @@
+MySQL
+
+MySQL is an open-source Relational Database Management System (RDBMS) that stores data in tables (rows and columns) and uses SQL (Structured Query Language) to manage data.
+
+MySQL is widely used for web applications and enterprise systems.
+
+Simple Definition
+
+MySQL is an open-source RDBMS that stores data in tables and allows users to create, retrieve, update, and delete data using SQL.
+
+Features of MySQL
+
+✔ Open-source (free to use)
+✔ Uses SQL language
+✔ High performance
+✔ Secure (user authentication & privileges)
+✔ Supports multi-user access
+✔ Supports large databases
+
+Where is MySQL Used?
+
+MySQL is commonly used in:
+
+Websites
+E-commerce systems
+Banking systems
+Student management systems
+Many websites built with:
+WordPress
+PHP
+use MySQL as their database.
+
+Basic MySQL Commands
+
+Here are common SQL commands used in MySQL:
+
+CREATE → Create database or table
+INSERT → Add data
+SELECT → Retrieve data
+UPDATE → Modify data
+DELETE → Remove data
+
+Example:
+SELECT * FROM Students;
+
+Advantages of MySQL
+
+✔ Easy to learn
+✔ Reliable and stable
+✔ Fast data processing
+✔ Good community support
+✔ Works on Windows, Linux, macOS
+
