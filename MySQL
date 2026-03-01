@@ -51,3 +51,58 @@ Advantages of MySQL
 ✔ Good community support
 ✔ Works on Windows, Linux, macOS
 
+===========================================
+
+Create Database in MySQL
+
+Here are the commands for both MySQL Shell and MySQL Workbench.
+
+We are using:
+MySQL
+and
+MySQL Workbench
+
+MySQL Shell Commands
+Step 1: Create Database
+CREATE DATABASE baqardb;
+
+Step 2: Use Database
+USE baqardb;
+
+Step 3: Create Employee Table
+CREATE TABLE Employee (
+    EmpID INT,
+    FirstName VARCHAR(255),
+    LastName VARCHAR(255),
+    EmpAge INT,
+    EmpZone VARCHAR(255)
+);
+
+OR using MySQL Workbench
+
+MySQL Workbench
+
+In MySQL Workbench, open a new SQL tab and run the same commands:
+
+CREATE DATABASE baqardb;
+USE baqardb;
+
+CREATE TABLE Employee (
+    EmpID INT,
+    FirstName VARCHAR(255),
+    LastName VARCHAR(255),
+    EmpAge INT,
+    EmpZone VARCHAR(255)
+);
+
+Better Version (Recommended for Practice)
+
+Usually, EmpID should be a Primary Key and auto-increment:
+
+CREATE TABLE Employee (
+    EmpID INT PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(255),
+    LastName VARCHAR(255),
+    EmpAge INT,
+    EmpZone VARCHAR(255)
+);
