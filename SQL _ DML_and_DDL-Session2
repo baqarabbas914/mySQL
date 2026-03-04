@@ -71,8 +71,8 @@ DDL (Data Definition Language) commands are used to define and manage the struct
 
 These commands are used in systems like MySQL and Oracle Database.
 
-🔷 Main Types of DDL Commands
-1️⃣ CREATE
+ Main Types of DDL Commands
+1 CREATE
 
 Used to create new database objects.
 
@@ -89,7 +89,7 @@ CREATE TABLE Employee (
     FirstName VARCHAR(255),
     LastName VARCHAR(255)
 );
-2️⃣ ALTER
+2 ALTER
 
 Used to modify the structure of an existing table.
 
@@ -101,7 +101,7 @@ Example:
 
 ALTER TABLE Employee
 ADD EmpAge INT;
-3️⃣ DROP
+3 DROP
 
 Used to delete database objects permanently.
 
@@ -114,7 +114,7 @@ DROP TABLE Employee;
 
 ⚠ Deletes structure + data permanently.
 
-4️⃣ TRUNCATE
+4 TRUNCATE
 
 Removes all records from a table but keeps the structure.
 
@@ -125,7 +125,7 @@ TRUNCATE TABLE Employee;
 ✔ Faster than DELETE
 ✔ Cannot use WHERE condition
 
-5️⃣ RENAME
+5 RENAME
 
 Used to rename a database object.
 
@@ -148,8 +148,8 @@ DML commands are used to manipulate data inside tables in SQL databases like MyS
 
  DML works on records (rows), not on table structure.
 
-🔷 Main Types of DML Commands
-1️⃣ INSERT
+ Main Types of DML Commands
+1 INSERT
 
 Used to add new records into a table.
 
@@ -160,7 +160,7 @@ VALUES (1, 'Ali', 'Khan', 25, 'North');
 ✔ Adds new data
 ✔ Can insert single or multiple rows
 
-2️⃣ SELECT
+2 SELECT
 
 Used to retrieve data from a table.
 
@@ -170,7 +170,7 @@ SELECT * FROM Employee;
 ✔ Used to view data
 ✔ Can use WHERE, ORDER BY, GROUP BY, etc.
 
-3️⃣ UPDATE
+3 UPDATE
 
 Used to modify existing records.
 
@@ -182,7 +182,7 @@ WHERE EmpID = 1;
 ✔ Changes existing data
 ⚠ Always use WHERE condition to avoid updating all rows.
 
-4️⃣ DELETE
+4 DELETE
 
 Used to remove records from a table.
 
@@ -199,3 +199,140 @@ INSERT	Add data
 SELECT	Retrieve data
 UPDATE	Modify data
 DELETE	Remove data
+
+Types of Merge Commands
+
+MERGE Command in SQL
+
+The MERGE command is used to combine INSERT, UPDATE, and sometimes DELETE operations into a single statement.
+
+ It is commonly used in systems like:
+
+Oracle Database
+
+Microsoft SQL Server
+
+⚠ In MySQL, MERGE is not supported in the same standard way (it uses INSERT ... ON DUPLICATE KEY UPDATE instead).
+
+ What is MERGE?
+
+MERGE is used to synchronize two tables — typically a source table and a target table.
+
+It checks conditions and then:
+
+Inserts new records
+
+Updates existing records
+
+Deletes unmatched records (optional)
+
+ Types of Operations Inside MERGE
+
+MERGE mainly performs three types of actions:
+
+1 WHEN MATCHED (UPDATE)
+
+If a record exists in both source and target tables → UPDATE it.
+
+Example:
+MERGE INTO Employee e
+USING NewEmployee n
+ON (e.EmpID = n.EmpID)
+WHEN MATCHED THEN
+UPDATE SET e.EmpAge = n.EmpAge;
+
+✔ Updates existing records
+
+2 WHEN NOT MATCHED (INSERT)
+
+If a record exists in source but not in target → INSERT it.
+
+WHEN NOT MATCHED THEN
+INSERT (EmpID, FirstName, LastName, EmpAge)
+VALUES (n.EmpID, n.FirstName, n.LastName, n.EmpAge);
+
+✔ Inserts new records
+
+3 WHEN NOT MATCHED BY SOURCE (DELETE)
+
+If a record exists in target but not in source → DELETE it.
+
+WHEN NOT MATCHED BY SOURCE THEN
+DELETE;
+
+✔ Removes old/unmatched records
+
+ Summary of MERGE Types
+Condition	Action
+WHEN MATCHED	UPDATE
+WHEN NOT MATCHED	INSERT
+WHEN NOT MATCHED BY SOURCE	DELETE
+
+=====================================================
+
+Creating Tables with Primary Key & Foreign Key (RDBMS)
+
+In relational databases like MySQL, tables are connected using Primary Keys (PK) and Foreign Keys (FK).
+
+ 1 Creating a Table with Primary Key
+ What is a Primary Key?
+
+A Primary Key is a column (or combination of columns) that uniquely identifies each record in a table.
+
+✔ Cannot contain NULL
+✔ Must be unique
+✔ Only one primary key per table
+
+ Example: Creating Employee Table with Primary Key
+CREATE TABLE Employee (
+    EmpID INT PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(255) NOT NULL,
+    LastName VARCHAR(255) NOT NULL,
+    EmpAge INT,
+    EmpZone VARCHAR(255)
+);
+
+Here:
+
+EmpID is the Primary Key
+
+AUTO_INCREMENT automatically generates values
+
+ 2 Creating Multiple Tables with Primary Key & Foreign Key Relationship
+ What is a Foreign Key?
+
+A Foreign Key is a column that links one table to the Primary Key of another table.
+
+✔ Creates relationship between tables
+✔ Ensures referential integrity
+✔ Prevents invalid data
+
+ Example: Department & Employee Relationship
+Step 1 Create Department Table (Parent Table)
+CREATE TABLE Department (
+    DeptID INT PRIMARY KEY AUTO_INCREMENT,
+    DeptName VARCHAR(255) NOT NULL
+);
+
+Here:
+
+DeptID is the Primary Key.
+
+Step 2 Create Employee Table (Child Table with Foreign Key)
+CREATE TABLE Employee (
+    EmpID INT PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(255),
+    LastName VARCHAR(255),
+    EmpAge INT,
+    DeptID INT,
+    FOREIGN KEY (DeptID) REFERENCES Department(DeptID)
+);
+
+Here:
+
+EmpID → Primary Key
+
+DeptID → Foreign Key
+
+DeptID in Employee references DeptID in Department
+
