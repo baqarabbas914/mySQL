@@ -1,0 +1,141 @@
+SQL Languages Overview
+
+In SQL (used in systems like MySQL and Oracle Database), commands are divided into different categories.
+
+The two important ones are:
+
+DDL (Data Definition Language)
+DML (Data Manipulation Language)
+
+ Data Definition Language (DDL)
+ What is DDL?
+
+DDL is used to define or modify the structure of the database objects.
+
+ It deals with structure, not data.
+
+ DDL Commands
+Command	Purpose
+CREATE	Create database or table
+ALTER	Modify table structure
+DROP	Delete table or database
+TRUNCATE	Remove all records from table
+RENAME	Rename table
+ Example of DDL
+CREATE DATABASE baqardb;
+
+CREATE TABLE Employee (
+    EmpID INT,
+    FirstName VARCHAR(255),
+    LastName VARCHAR(255)
+);
+
+✔ Creates structure
+✔ No data manipulation
+
+Data Manipulation Language (DML)
+ What is DML?
+
+DML is used to manage the data inside the tables.
+
+ It deals with records (rows).
+
+DML Commands
+Command	Purpose
+INSERT	Add new records
+SELECT	Retrieve data
+UPDATE	Modify existing records
+DELETE	Remove records
+
+Example of DML
+INSERT INTO Employee VALUES (1, 'Ali', 'Khan');
+
+SELECT * FROM Employee;
+
+UPDATE Employee SET FirstName = 'Ahmed' WHERE EmpID = 1;
+
+DELETE FROM Employee WHERE EmpID = 1;
+
+✔ Works with data
+✔ Does not change table structure
+
+Main Difference Between DDL and DML
+Feature	    DDL	            DML
+Works On	Structure	    Data
+Example	    CREATE, DROP	INSERT, UPDATE
+Auto Commit	Yes	            No (can rollback)
+
+Types of DDL Commands in SQL
+
+DDL (Data Definition Language) commands are used to define and manage the structure of database objects like databases, tables, indexes, etc.
+
+These commands are used in systems like MySQL and Oracle Database.
+
+🔷 Main Types of DDL Commands
+1️⃣ CREATE
+
+Used to create new database objects.
+
+✔ Create database
+✔ Create table
+✔ Create index
+
+Example:
+
+CREATE DATABASE baqardb;
+
+CREATE TABLE Employee (
+    EmpID INT,
+    FirstName VARCHAR(255),
+    LastName VARCHAR(255)
+);
+2️⃣ ALTER
+
+Used to modify the structure of an existing table.
+
+✔ Add column
+✔ Modify column
+✔ Drop column
+
+Example:
+
+ALTER TABLE Employee
+ADD EmpAge INT;
+3️⃣ DROP
+
+Used to delete database objects permanently.
+
+✔ Drop database
+✔ Drop table
+
+Example:
+
+DROP TABLE Employee;
+
+⚠ Deletes structure + data permanently.
+
+4️⃣ TRUNCATE
+
+Removes all records from a table but keeps the structure.
+
+Example:
+
+TRUNCATE TABLE Employee;
+
+✔ Faster than DELETE
+✔ Cannot use WHERE condition
+
+5️⃣ RENAME
+
+Used to rename a database object.
+
+Example:
+
+RENAME TABLE Employee TO Staff;
+🔥 Summary Table
+Command	Purpose
+CREATE	Create objects
+ALTER	Modify structure
+DROP	Delete objects
+TRUNCATE	Remove all records
+RENAME	Rename object

@@ -1,0 +1,97 @@
+List MySQL Data Types
+
+MySQL Data Types
+
+In MySQL, data types define the type of data a column can store (number, text, date, etc.).
+
+They are mainly divided into 3 major categories:
+
+Numeric Data Types
+
+Used to store numbers.
+
+Integer Types
+
+TINYINT
+
+SMALLINT
+
+MEDIUMINT
+
+INT / INTEGER
+
+BIGINT
+
+Decimal Types
+
+DECIMAL(p,s) → Exact decimal values
+
+NUMERIC(p,s)
+
+Floating Point Types
+
+FLOAT
+
+DOUBLE
+
+Boolean
+
+BOOLEAN (stores TRUE/FALSE as 1/0)
+
+String (Character) Data Types
+
+Used to store text.
+
+Fixed Length
+
+CHAR(n)
+
+Variable Length
+
+VARCHAR(n)
+
+Large Text
+
+TEXT
+
+TINYTEXT
+
+MEDIUMTEXT
+
+LONGTEXT
+
+Binary Strings
+
+BINARY(n)
+
+VARBINARY(n)
+
+BLOB
+
+TINYBLOB
+
+MEDIUMBLOB
+
+LONGBLOB
+
+Date and Time Data Types
+
+Used to store date and time values.
+
+DATE → YYYY-MM-DD
+
+TIME → HH:MM:SS
+
+DATETIME
+
+TIMESTAMP
+
+YEAR
+
+Other Data Types
+
+ENUM → List of allowed values
+
+SET → Multiple values from a list
+
+JSON → Store JSON data

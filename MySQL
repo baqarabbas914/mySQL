@@ -152,3 +152,7 @@ Retrieve records from multiple coloumns
 SELECT EmpID, FirstName FROM EMPLOYEE;
 
 SELECT EmpID, FirstName, LastName FROM EMPLOYEE;
+
+=============================================================
+
+
