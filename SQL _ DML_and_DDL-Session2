@@ -132,10 +132,70 @@ Used to rename a database object.
 Example:
 
 RENAME TABLE Employee TO Staff;
-🔥 Summary Table
-Command	Purpose
-CREATE	Create objects
-ALTER	Modify structure
-DROP	Delete objects
+ Summary Table
+Command	    Purpose
+CREATE	    Create objects
+ALTER	    Modify structure
+DROP	    Delete objects
 TRUNCATE	Remove all records
-RENAME	Rename object
+RENAME	    Rename object
+
+Types of DML commands
+
+Types of DML (Data Manipulation Language) Commands
+
+DML commands are used to manipulate data inside tables in SQL databases like MySQL and Microsoft SQL Server.
+
+ DML works on records (rows), not on table structure.
+
+🔷 Main Types of DML Commands
+1️⃣ INSERT
+
+Used to add new records into a table.
+
+Example:
+INSERT INTO Employee (EmpID, FirstName, LastName, EmpAge, EmpZone)
+VALUES (1, 'Ali', 'Khan', 25, 'North');
+
+✔ Adds new data
+✔ Can insert single or multiple rows
+
+2️⃣ SELECT
+
+Used to retrieve data from a table.
+
+Example:
+SELECT * FROM Employee;
+
+✔ Used to view data
+✔ Can use WHERE, ORDER BY, GROUP BY, etc.
+
+3️⃣ UPDATE
+
+Used to modify existing records.
+
+Example:
+UPDATE Employee
+SET EmpAge = 26
+WHERE EmpID = 1;
+
+✔ Changes existing data
+⚠ Always use WHERE condition to avoid updating all rows.
+
+4️⃣ DELETE
+
+Used to remove records from a table.
+
+Example:
+DELETE FROM Employee
+WHERE EmpID = 1;
+
+✔ Deletes specific rows
+✔ Can use WHERE condition
+
+ Summary Table
+Command	Purpose
+INSERT	Add data
+SELECT	Retrieve data
+UPDATE	Modify data
+DELETE	Remove data
