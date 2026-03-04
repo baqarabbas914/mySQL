@@ -336,3 +336,12 @@ DeptID → Foreign Key
 
 DeptID in Employee references DeptID in Department
 
+How the Relationship Works
+Department Table	        Employee Table
+DeptID(PK)	                DeptID (FK)
+1 → HR	                    Employee assigned to HR
+2 → IT	                    Employee assigned to IT
+
+ One Department can have many Employees
+ This is called One-to-Many Relationship
+
